@@ -1,9 +1,9 @@
-<h1 align="center">MicroPython ProMake Rasp Pico LED VoiceControl</h1>
+<h1 align="center">MicroPython ProMake Rasp Pico LED VisionControl</h1>
 
 
 <div align="center" ><a href="https://easy-iot.ir"><img loading="lazy" style="width:700px" src="./docs/giga-pardaz-demo.gif"></a></div>
 
-<h3 align="center">Brief Sample to control raspberry pico w with google voice assistant (SpeechRecognition) through mqtt</h3>
+<h3 align="center">Brief Sample to control raspberry pico w with hand postures vision control through mqtt</h3>
 <p align="center">
 <a href="https://www.micropython.org/" target="_blank"> <img src="https://micropython.org/static/img/Mlogo_138wh.png" alt="micropython" width="40" height="40"/> </a> 
 <a href="https://www.easy-iot.ir/" target="_blank"> <img src="https://easy-iot.io/wp-content/uploads/2022/02/logo.png" alt="easy-iot" width="90" height="40"/> </a> 
@@ -17,10 +17,11 @@
 - [Setup PicoW](#setup-picow)
 - [Setup Thonny](#setup-thonny)
 - [Upload the code](#upload-the-code)
-- [Assistant](#assistant)
+- [VisionControl](#visioncontrol)
   - [Setup Code](#setup-code)
   - [Test Code](#test-code)
 - [License](#license)
+- [Credits](#credits)
 - [Bugs or Opinion](#bugs-or-opinion)
 
 
@@ -30,6 +31,7 @@
 - NeoPixel
 - uMqtt
 - Raspberry Pico W
+
 
 
 # Assemble
@@ -83,7 +85,7 @@ it will start running and trying to connect to the wifi you provided. and the co
 <div align="center" ><img loading="lazy" style="width:700px" src="./docs/upload-code.png"></div>
 
 
-# Assistant
+# VisionControl
 
 ## Setup Code
 first of all you have to install the dependencies so go to the assistant directory and use the requirements.txt and install the dependencies with the command bellow:
@@ -92,29 +94,28 @@ first of all you have to install the dependencies so go to the assistant directo
 pip install -r requirements.txt
 ```
 
-after that all you have to do is run the ```google_assistant.py``` code.
-**Note:** dont forget to setup your microphone and choose the right index.
+after that all you have to do is run the ```detector.py``` code.
+**Note:** dont forget to set the correct camera index.
 
 ## Test Code
-now each time you want the assistant to listen to the incoming voice you have to raise it with the combination of ``` Ctrl+` ```then you will see the message telling you that its ready and listening.
-```shell
-say something...
-```
+Based on the 6 postures that i have provided you can set colors to the led on the board.
 
-now there are two keywords which the code is listening to:
+<div align="center" ><img loading="lazy" style="width:700px" src="./docs/demo.gif"></div>
 
-- روشن
-- خاموش
-- آبی
-- قرمز 
-- سبز
-- زرد
-- نارنجی
 
-which means in order to set the light on you have to say the first  keyword, then a message will be published through mqtt to the corresponding subscriber and the raspberry will change the led state to On. and if you say the second keyword it will be otherwise.
+- one - means (red)
+- two - means (blue)
+- three - means (green)
+- four - means (yellow)
+- five - means (on or white)
+- fist or zero - means (off)
 
 # License
 MIT
+
+# Credits
+this code has been based on some one else work which you can find the original project in here:
+ - https://github.com/jhan15/hand_gesture_detection
 
 # Bugs or Opinion
 Feel free to let me know if there are any problems or any request you have for this repo.
