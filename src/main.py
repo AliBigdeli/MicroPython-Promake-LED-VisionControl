@@ -13,8 +13,8 @@ MQTT_USER      = ""
 MQTT_PASSWORD  = ""
 MQTT_TOPIC     = "promake/led/test"
 
-WIFI_SSID = "BlackFox"
-WIFI_PASSWORD = "@li9214970398"
+WIFI_SSID = "your-ssid"
+WIFI_PASSWORD = "your-passsword"
 
 class Colors:
   yellow = (255, 100, 0)
